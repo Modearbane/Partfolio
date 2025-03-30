@@ -1,0 +1,67 @@
+.about-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    text-align: center;
+  }
+  
+  .about-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .about-text {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+  
+  /* Įgūdžių sekcija */
+  .skills-container {
+    margin-top: 30px;
+    text-align: left;
+  }
+  
+  .skills-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .skill {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+  
+  .skill-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .skill-bar {
+    height: 8px;
+    background: linear-gradient(90deg, #4caf50, #8bc34a);
+    border-radius: 5px;
+    transition: width 0.5s ease-in-out;
+  }
+  
+  /* Ikonėlių stilius */
+  .skill-icon {
+    font-size: 24px;
+  }
+  
+  /* Spalvos ikonėlėms */
+  .html { color: #e34c26; }
+  .css { color: #264de4; }
+  .js { color: #f7df1e; }
+  .react { color: #61dafb; }
+  .sql { color: #00758f; }
+  

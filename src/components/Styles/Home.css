@@ -1,0 +1,82 @@
+/* Bendras konteineris */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  background: linear-gradient(135deg, #f0f0f0, #d6d6d6);
+  transition: background 0.5s ease-in-out;
+}
+
+/* Tamsus režimas */
+.dark-mode .home-container {
+  background: linear-gradient(135deg, #121212, #1e1e1e);
+  color: white;
+}
+
+/* Tema perjungimo mygtukas */
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.dark-mode .theme-toggle {
+  background: #333;
+  color: white;
+}
+
+/* Profilio nuotrauka */
+.profile-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 4px solid #333;
+  transition: all 0.3s ease;
+}
+
+.dark-mode .profile-img {
+  border-color: white;
+}
+
+/* Vardas */
+.name-title {
+  font-size: 36px;
+  font-weight: bold;
+  margin-top: 15px;
+  transition: all 0.3s ease;
+}
+
+/* CV mygtukas */
+.cv-button {
+  margin-top: 20px;
+  padding: 12px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  background: #007bff;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.cv-button:hover {
+  background: #0056b3;
+}
+
+.dark-mode .cv-button {
+  background: #4CAF50;
+}
+
+.dark-mode .cv-button:hover {
+  background: #388E3C;
+}
