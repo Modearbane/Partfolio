@@ -1,50 +1,53 @@
-import { useState } from "react";
+import { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { ThemeContext } from "../context/ThemeContext";
+import { LanguageContext } from "../context/LanguageContext";
 import "./Styles/Navbar.css";
 
 const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
-
-  const toggleMenu = () => setMenuOpen(!menuOpen);
+  const { darkMode, setDarkMode } = useContext(ThemeContext);
+  const { language, toggleLanguage } = useContext(LanguageContext);
 
   return (
     <nav className="navbar">
       <div className="nav-container">
-        <Link to="/" className="logo">
-          Mano Portfolio
-        </Link>
+        {/* Tamsaus režimo perjungimas */}
+        <button className="theme-toggle" onClick={() => setDarkMode(!darkMode)}>
+          {darkMode ? "☀️" : "🌙"}
+        </button>
 
-        <div className="menu-icon" onClick={toggleMenu}>
-          {menuOpen ? "✖" : "☰"}
-        </div>
-
-        <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
+        {/* Navigacijos nuorodos */}
+        <ul className="nav-links">
           <li>
             <Link to="/" className={location.pathname === "/" ? "active" : ""}>
-              Pagrindinis
+              {language === "lt" ? "Pagrindinis" : "Home"}
             </Link>
           </li>
           <li>
             <Link to="/about" className={location.pathname === "/about" ? "active" : ""}>
-              Apie mane
+              {language === "lt" ? "Apie mane" : "About"}
             </Link>
           </li>
           <li>
             <Link to="/projects" className={location.pathname === "/projects" ? "active" : ""}>
-              Projektai
+              {language === "lt" ? "Projektai" : "Projects"}
             </Link>
           </li>
           <li>
             <Link to="/contact" className={location.pathname === "/contact" ? "active" : ""}>
-              Kontaktai
+              {language === "lt" ? "Kontaktai" : "Contact"}
             </Link>
           </li>
         </ul>
+
+        {/* Kalbos keitimas */}
+        <button className="language-toggle" onClick={toggleLanguage}>
+          {language === "lt" ? "EN 🇬🇧" : "LT 🇱🇹"}
+        </button>
       </div>
     </nav>
   );
 };
 
 export default Navbar;
-

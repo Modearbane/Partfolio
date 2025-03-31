@@ -1,41 +1,60 @@
+import React, { useState } from "react";
 import ProjectCard from "../Projectcard";
-import { motion } from "framer-motion";
+import "../Styles/Projects.css"; // Stiliai
 
-const projects = [
-  {
-    title: "E-parduotuvė",
-    description: "Sukurta naudojant React ir Firebase.",
-    image: "https://via.placeholder.com/300",
-    link: "https://github.com/tavo-projektas",
-  },
+const projectsData = [
   {
     title: "Portfolio",
-    description: "Asmeninė portfolio svetainė.",
+    description: "Asmeninis portfolio su animacijomis ir interaktyviais elementais.",
     image: "https://via.placeholder.com/300",
-    link: "https://github.com/tavo-projektas",
+    technologies: ["React", "CSS", "Framer Motion"],
+    link: "https://github.com/tavo-vardas/portfolio",
   },
   {
-    title: "Kolt Scooter App",
-    description: "CRUD sistema elektriniams paspirtukams valdyti.",
+    title: "E-Komercijos Svetainė",
+    description: "Pilna e-komercijos sistema su prekių katalogu ir pirkinių krepšeliu.",
     image: "https://via.placeholder.com/300",
-    link: "https://github.com/tavo-projektas",
+    technologies: ["React", "Node.js", "MySQL"],
+    link: "https://github.com/tavo-vardas/ecommerce",
   },
+  {
+    title: "Kolt Paspirtukų Valdymas",
+    description: "SPA aplikacija paspirtukų valdymui, naudojant localStorage.",
+    image: "https://via.placeholder.com/300",
+    technologies: ["React", "CSS"],
+    link: "https://github.com/tavo-vardas/kolt",
+  }
 ];
 
-
 const Projects = () => {
-    return (
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="p-10 text-center"
-      >
-        <h2 className="text-3xl font-bold">Projektai</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-          {/* Projektai */}
-        </div>
-      </motion.div>
-    );
-  };
+  const [filter, setFilter] = useState("Visi");
+
+  const filteredProjects = projectsData.filter((project) =>
+    filter === "Visi" || project.technologies.includes(filter)
+  );
+
+  return (
+    <div className="projects-container">
+      <h1>Mano Projektai</h1>
+      
+      {/* Filtravimas */}
+      <div className="filter-buttons">
+        {["Visi", "React", "Node.js", "MySQL", "CSS"].map((tech) => (
+          <button key={tech} onClick={() => setFilter(tech)}>
+            {tech}
+          </button>
+        ))}
+      </div>
+
+      {/* Projektų sąrašas */}
+      <div className="projects-list">
+        {filteredProjects.map((project, index) => (
+          <ProjectCard key={index} {...project} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
 export default Projects;
+

@@ -60,10 +60,10 @@ const Home = () => {
         loop
       />
       
-      {/* CV mygtukas su hover efektu */}
+      {/* CV mygtukas su veikiančiu atsisiuntimu */}
       <motion.a 
         href="/cv.pdf" 
-        download 
+        download="Tavo_CV.pdf"
         className="cv-button"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
