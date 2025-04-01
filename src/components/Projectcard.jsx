@@ -1,5 +1,5 @@
 import React from "react";
-import "./Styles/Projects.css"; // Stiliai
+import Projectcard from "./pages/Projects";
 
 const ProjectCard = ({ title, description, image, technologies, link }) => {
   return (

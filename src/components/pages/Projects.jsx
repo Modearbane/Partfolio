@@ -1,32 +1,29 @@
-import React, { useState } from "react";
-import ProjectCard from "../Projectcard";
-import "../Styles/Projects.css"; // Stiliai
+import { useState } from "react";
+import { useLanguage } from "../../context/LanguageContext";
+import { useTheme } from "../../context/ThemeContext";
+import ProjectCard from "../ProjectCard";
+import "../Styles/Projects.css";
 
 const projectsData = [
   {
-    title: "Portfolio",
-    description: "Asmeninis portfolio su animacijomis ir interaktyviais elementais.",
+    title: { lt: "Portfolio", en: "Portfolio" },
+    description: { lt: "Asmeninis portfolio su animacijomis.", en: "Personal portfolio with animations." },
     image: "https://via.placeholder.com/300",
     technologies: ["React", "CSS", "Framer Motion"],
     link: "https://github.com/tavo-vardas/portfolio",
   },
   {
-    title: "E-Komercijos Svetainė",
-    description: "Pilna e-komercijos sistema su prekių katalogu ir pirkinių krepšeliu.",
+    title: { lt: "E-Komercijos Svetainė", en: "E-Commerce Website" },
+    description: { lt: "Pilna e-komercijos sistema.", en: "A complete e-commerce system." },
     image: "https://via.placeholder.com/300",
     technologies: ["React", "Node.js", "MySQL"],
     link: "https://github.com/tavo-vardas/ecommerce",
   },
-  {
-    title: "Kolt Paspirtukų Valdymas",
-    description: "SPA aplikacija paspirtukų valdymui, naudojant localStorage.",
-    image: "https://via.placeholder.com/300",
-    technologies: ["React", "CSS"],
-    link: "https://github.com/tavo-vardas/kolt",
-  }
 ];
 
 const Projects = () => {
+  const { language } = useLanguage();
+  const { theme } = useTheme();
   const [filter, setFilter] = useState("Visi");
 
   const filteredProjects = projectsData.filter((project) =>
@@ -34,10 +31,9 @@ const Projects = () => {
   );
 
   return (
-    <div className="projects-container">
-      <h1>Mano Projektai</h1>
+    <div className={`projects-container ${theme}`}>
+      <h1>{language === "lt" ? "Mano Projektai" : "My Projects"}</h1>
       
-      {/* Filtravimas */}
       <div className="filter-buttons">
         {["Visi", "React", "Node.js", "MySQL", "CSS"].map((tech) => (
           <button key={tech} onClick={() => setFilter(tech)}>
@@ -46,10 +42,9 @@ const Projects = () => {
         ))}
       </div>
 
-      {/* Projektų sąrašas */}
       <div className="projects-list">
         {filteredProjects.map((project, index) => (
-          <ProjectCard key={index} {...project} />
+          <ProjectCard key={index} title={project.title[language]} description={project.description[language]} image={project.image} technologies={project.technologies} link={project.link} />
         ))}
       </div>
     </div>
@@ -57,4 +52,3 @@ const Projects = () => {
 };
 
 export default Projects;
-

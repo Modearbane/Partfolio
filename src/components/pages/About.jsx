@@ -1,3 +1,5 @@
+import { useTheme } from "../../context/ThemeContext";
+import { useLanguage } from "../../context/LanguageContext";
 import { motion } from "framer-motion";
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaDatabase } from "react-icons/fa";
 import "../Styles/About.css";
@@ -11,15 +13,18 @@ const skills = [
 ];
 
 const About = () => {
+  const { theme } = useTheme();
+  const { language } = useLanguage();
+
   return (
-    <div className="about-container">
+    <div className={`about-container ${theme}`}>
       <motion.h1
         className="about-title"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        Apie Mane
+        {language === "lt" ? "Apie Mane" : "About Me"}
       </motion.h1>
 
       <motion.p
@@ -28,13 +33,13 @@ const About = () => {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1 }}
       >
-        Esu aistringas <b>front-end programuotojas</b>, mėgstantis kurti modernias, interaktyvias ir 
-        vizualiai patrauklias internetines svetaines. Mano pagrindinės technologijos – <b>React, JavaScript, CSS</b> 
-        ir UI/UX dizaino principai.
+        {language === "lt"
+          ? "Esu aistringas front-end programuotojas, mėgstantis kurti modernias, interaktyvias svetaines."
+          : "I am a passionate front-end developer who loves creating modern, interactive websites."}
       </motion.p>
 
       <div className="skills-container">
-        <h2 className="skills-title">Mano Įgūdžiai</h2>
+        <h2 className="skills-title">{language === "lt" ? "Mano Įgūdžiai" : "My Skills"}</h2>
         {skills.map((skill, index) => (
           <div key={index} className="skill">
             <div className="skill-info">

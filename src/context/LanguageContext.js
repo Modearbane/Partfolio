@@ -1,14 +1,14 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useContext } from "react";
 
 export const LanguageContext = createContext();
 
 export const LanguageProvider = ({ children }) => {
-  const [language, setLanguage] = useState(localStorage.getItem("language") || "lt");
+  const [language, setLanguage] = useState(localStorage.getItem("lang") || "lt");
 
   const toggleLanguage = () => {
-    const newLanguage = language === "lt" ? "en" : "lt";
-    setLanguage(newLanguage);
-    localStorage.setItem("language", newLanguage);
+    const newLang = language === "lt" ? "en" : "lt";
+    setLanguage(newLang);
+    localStorage.setItem("lang", newLang);
   };
 
   return (
@@ -17,3 +17,6 @@ export const LanguageProvider = ({ children }) => {
     </LanguageContext.Provider>
   );
 };
+
+// Custom hook patogesniam naudojimui
+export const useLanguage = () => useContext(LanguageContext);
