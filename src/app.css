@@ -1,32 +1,33 @@
-body {
+/* Pagrindinis stiliaus formatavimas */
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
+  font-family: "Arial", sans-serif;
 }
 
-.container {
+html, body {
+  width: 100%;
   min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background-color: #3b82f6;
-  color: white;
+  overflow-x: hidden;
+}
+
+/* Bendras konteineris, kad viskas būtų centruota */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 20px;
 }
 
-body.dark-mode {
-  background-color: #121212;
-  color: white;
+/* Responyvus dizainas */
+@media (max-width: 1024px) {
+  .container {
+    max-width: 90%;
+  }
 }
 
-.dark-mode .navbar {
-  background-color: #222;
-}
-
-.dark-mode button {
-  background-color: #333;
-  color: white;
+@media (max-width: 768px) {
+  .container {
+    max-width: 95%;
+  }
 }

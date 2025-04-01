@@ -56,23 +56,37 @@
   transition: all 0.3s ease;
 }
 
-/* CV mygtukas */
 .cv-button {
-  margin-top: 20px;
+  display: inline-block;
   padding: 12px 20px;
-  font-size: 18px;
+  font-size: 1rem;
   font-weight: bold;
-  background: #007bff;
-  color: white;
-  border-radius: 8px;
+  text-align: center;
   text-decoration: none;
+  color: white;
+  background-color: #007bff;
+  border-radius: 8px;
+  transition: 0.3s;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  transform: scale(1);
 }
 
+
 .cv-button:hover {
-  background: #0056b3;
+  background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .cv-button {
+    font-size: 0.9rem;
+    padding: 10px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cv-button {
+    font-size: 0.8rem;
+    padding: 8px 12px;
+  }
 }
 
 .cv-button:active {

@@ -6,6 +6,22 @@ import "../Styles/Home.css";
 const Home = () => {
   const { language } = useLanguage();
 
+  const downloadCV = () => {
+    fetch("/cv.pdf") // Kelias į failą public aplanke
+      .then((response) => response.blob())
+      .then((blob) => {
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "CV.pdf"; // Failo pavadinimas atsisiunčiant
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        window.URL.revokeObjectURL(url);
+      })
+      .catch((error) => console.error("CV atsisiuntimo klaida:", error));
+  };
+
   return (
     <div className="home-container">
       <motion.img
@@ -43,15 +59,14 @@ const Home = () => {
         }}
       />
 
-      <motion.a
-        href="https://Modearbane.github.io/Partfolio/cv.pdf"
-        download="CV.pdf"
+      <motion.button
+        onClick={downloadCV}
         className="cv-button"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
       >
         📄 {language === "lt" ? "Atsisiųsti CV" : "Download CV"}
-      </motion.a>
+      </motion.button>
     </div>
   );
 };

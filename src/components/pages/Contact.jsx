@@ -5,10 +5,10 @@ import "../Styles/Contacts.css";
 
 const Contact = () => {
   const { language } = useLanguage();
-  const { theme } = useTheme();
+  const { darkMode } = useTheme();
 
   return (
-    <div className={`contact-container ${theme}`}>
+    <div className={`contact-container ${darkMode ? "dark-mode" : ""}`}>
       <h2 className="contact-title">{language === "lt" ? "Susisiekime" : "Contact Me"}</h2>
       <div className="contact-info">
         <a href="mailto:tavoemail@gmail.com" className="contact-item">

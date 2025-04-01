@@ -1,37 +1,67 @@
 .contact-container {
-    text-align: center;
-    padding: 40px 20px;
-    background-color: #f9f9f9;
-  }
-  
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Tamsus režimas */
+.dark-mode .contact-container {
+  background-color: #222;
+  color: white;
+}
+
+.contact-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.contact-item:hover {
+  color: #007bff;
+}
+
+/* Tamsus režimas - kontaktai */
+.dark-mode .contact-item {
+  color: white;
+}
+
+.dark-mode .contact-item:hover {
+  color: #4caf50;
+}
+
+.icon {
+  font-size: 24px;
+}
+
+/* 📱 Mobiliesiems */
+@media (max-width: 600px) {
   .contact-title {
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
-  .contact-info {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    align-items: center;
-  }
-  
-  .contact-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-    font-size: 18px;
-    color: #333;
-    transition: color 0.3s;
-  }
-  
-  .contact-item:hover {
-    color: #007bff;
-  }
-  
-  .icon {
     font-size: 24px;
   }
-  
+
+  .contact-item {
+    font-size: 16px;
+  }
+
+  .icon {
+    font-size: 20px;
+  }
+}
