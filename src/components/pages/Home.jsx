@@ -44,8 +44,8 @@ const Home = () => {
       />
 
       <motion.a
-        href="/cv.pdf"
-        download="Tavo_CV.pdf"
+        href={`${process.env.PUBLIC_URL}/cv.pdf`}
+        download="CV.pdf" 
         className="cv-button"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
