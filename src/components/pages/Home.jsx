@@ -2,6 +2,7 @@ import { useLanguage } from "../../context/LanguageContext";
 import { motion } from "framer-motion";
 import Typewriter from "react-typewriter-effect";
 import "../Styles/Home.css";
+import profilePic from "../../assets/Profile.jpg"; 
 
 const Home = () => {
   const { language } = useLanguage();
@@ -25,7 +26,7 @@ const Home = () => {
   return (
     <div className="home-container">
       <motion.img
-        src="https://via.placeholder.com/200"
+        src={profilePic}
         alt="Profilio nuotrauka"
         className="profile-img"
         initial={{ opacity: 0, scale: 0.5 }}

@@ -1,4 +1,17 @@
-/* Pagrindinis stiliaus formatavimas */
+.dark-mode {
+  background-color: #222;
+  color: white;
+}
+
+.light-mode {
+  background-color: #fff;
+  color: black;
+}
+
+.app-container {
+  min-height: 100vh;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -12,14 +25,14 @@ html, body {
   overflow-x: hidden;
 }
 
-/* Bendras konteineris, kad viskas būtų centruota */
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
 }
 
-/* Responyvus dizainas */
+
 @media (max-width: 1024px) {
   .container {
     max-width: 90%;

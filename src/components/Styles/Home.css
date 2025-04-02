@@ -35,17 +35,27 @@
   color: white;
 }
 
-/* Profilio nuotrauka */
 .profile-img {
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
+  object-fit: cover; /* Apkarpo nuotrauką, bet neištempia */
+  object-position: top; /* Pakelia vaizdą aukštyn, kad matytųsi tik veidas */
   border: 4px solid #333;
-  transition: all 0.3s ease;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Tamsus režimas */
 .dark-mode .profile-img {
   border-color: white;
+  box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Efektas užvedus pelę */
+.profile-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* Vardas */
