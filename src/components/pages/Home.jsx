@@ -8,20 +8,16 @@ const Home = () => {
   const { language } = useLanguage();
 
   const downloadCV = () => {
-    fetch("/cv.pdf") // Kelias į failą public aplanke
-      .then((response) => response.blob())
-      .then((blob) => {
-        const url = window.URL.createObjectURL(blob);
-        const a = document.createElement("a");
-        a.href = url;
-        a.download = "CV.pdf"; // Failo pavadinimas atsisiunčiant
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        window.URL.revokeObjectURL(url);
-      })
-      .catch((error) => console.error("CV atsisiuntimo klaida:", error));
+    const cvPath = "/cv.pdf"; // CV failas public aplanke
+    const link = document.createElement("a");
+    link.href = cvPath;
+    link.download = "Mano_CV.pdf"; // Atsisiunčiamo failo pavadinimas
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
+  
+  
 
   return (
     <div className="home-container">
