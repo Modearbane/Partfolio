@@ -2,24 +2,23 @@ import { useLanguage } from "../../context/LanguageContext";
 import { motion } from "framer-motion";
 import Typewriter from "react-typewriter-effect";
 import "../Styles/Home.css";
-import profilePic from "../../assets/Profile.jpg"; 
+import profilePic from "../../assets/Profile.jpg";
+import cvFile from "../../assets/cv.pdf";
 
 const Home = () => {
   const { language } = useLanguage();
 
+  
   const downloadCV = () => {
-    const cvPath = "/cv.pdf"; // Kelias tiesiai iš public aplanko
     const link = document.createElement("a");
-    link.href = cvPath;
-    link.setAttribute("download", "Mano_CV.pdf"); // Pridedame "download" atributą
+    link.href = cvFile;
+    link.download = "Mano_CV.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   };
-  
-  
    
-
+   
   return (
     <div className="home-container">
       <motion.img
