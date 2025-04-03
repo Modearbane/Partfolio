@@ -8,14 +8,15 @@ const Home = () => {
   const { language } = useLanguage();
 
   const downloadCV = () => {
-    const cvPath = "/cv.pdf"; // CV failas public aplanke
+    const cvPath = process.env.PUBLIC_URL + "/cv.pdf"; // Naudojam PUBLIC_URL
     const link = document.createElement("a");
     link.href = cvPath;
-    link.download = "Mano_CV.pdf"; // Atsisiunčiamo failo pavadinimas
+    link.download = "CV.pdf"; // Pavadinimas atsisiunčiant
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   };
+  
   
   
 
