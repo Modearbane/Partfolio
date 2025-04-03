@@ -2,23 +2,25 @@ import { useLanguage } from "../../context/LanguageContext";
 import { motion } from "framer-motion";
 import Typewriter from "react-typewriter-effect";
 import "../Styles/Home.css";
-import profilePic from "../../assets/Profile.jpg";
-import cvFile from "../../assets/cv.pdf";
+import profilePic from "../../assets/Profile.jpg"; 
 
 const Home = () => {
   const { language } = useLanguage();
 
-  
   const downloadCV = () => {
+    const fileId = "1VwZNmJs59LKTqsPHHSBHMen0hdW-A7za";
+    const downloadUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
+  
     const link = document.createElement("a");
-    link.href = cvFile;
+    link.href = downloadUrl;
     link.download = "Mano_CV.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   };
-   
-   
+  
+  
+
   return (
     <div className="home-container">
       <motion.img
