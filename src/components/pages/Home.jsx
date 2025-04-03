@@ -8,17 +8,17 @@ const Home = () => {
   const { language } = useLanguage();
 
   const downloadCV = () => {
-    const cvPath = process.env.PUBLIC_URL + "/cv.pdf"; // Naudojam PUBLIC_URL
+    const cvPath = "/cv.pdf"; // Kelias tiesiai iš public aplanko
     const link = document.createElement("a");
     link.href = cvPath;
-    link.download = "CV.pdf"; // Pavadinimas atsisiunčiant
+    link.setAttribute("download", "Mano_CV.pdf"); // Pridedame "download" atributą
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   };
   
   
-  
+   
 
   return (
     <div className="home-container">
