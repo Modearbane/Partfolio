@@ -1,68 +1,137 @@
 .about-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 40px;
-    text-align: center;
-    top: 200px;
-  }
-  
+  max-width: 800px;
+  margin: 100px auto 0 auto; /* Nuleidžiam nuo viršaus */
+  padding: 60px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: calc(100vh - 100px);
+  box-sizing: border-box;
+}
+
+.about-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.junior-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+.about-text {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+/* Įgūdžių sekcija */
+.skills-container {
+  margin-top: 30px;
+}
+
+.skills-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.skill-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.skill-bar-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: 10px;
+  background-color: #ddd;
+  border-radius: 5px;
+}
+
+.skill-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: linear-gradient(90deg, #4caf50, #8bc34a);
+  border-radius: 5px;
+  transition: width 0.5s ease-in-out;
+}
+
+.skill-percent {
+  position: absolute;
+  right: 0;
+  top: -22px;
+  font-size: 0.9rem;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Ikonų stiliai */
+.skill-icon {
+  font-size: 26px;
+}
+.html { color: #e34c26; }
+.css { color: #264de4; }
+.js { color: #f7df1e; }
+.react { color: #61dafb; }
+.sql { color: #00758f; }
+.bootstrap { color: #7952b3; }
+.nodejs { color: #68a063; }
+
+/* Responsive */
+@media (max-width: 768px) {
   .about-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #333;
+    font-size: 2rem;
   }
-  
+
   .about-text {
-    font-size: 1.2rem;
-    color: #555;
-    line-height: 1.6;
-    margin-bottom: 15px;
+    font-size: 1rem;
   }
-  
-  /* Įgūdžių sekcija */
-  .skills-container {
-    margin-top: 30px;
-    text-align: left;
-  }
-  
-  .skills-title {
-    font-size: 1.8rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-    text-align: center;
-  }
-  
-  .skill {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 15px;
-  }
-  
+
   .skill-info {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: bold;
-    margin-bottom: 5px;
+    font-size: 1rem;
   }
-  
+
+  .skills-title {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-container {
+    padding: 40px 15px;
+  }
+
+  .about-title {
+    font-size: 1.8rem;
+  }
+
+  .skills-title {
+    font-size: 1.4rem;
+  }
+
   .skill-bar {
     height: 8px;
-    background: linear-gradient(90deg, #4caf50, #8bc34a);
-    border-radius: 5px;
-    transition: width 0.5s ease-in-out;
   }
-  
-  /* Ikonėlių stilius */
-  .skill-icon {
-    font-size: 24px;
-  }
-  
-  /* Spalvos ikonėlėms */
-  .html { color: #e34c26; }
-  .css { color: #264de4; }
-  .js { color: #f7df1e; }
-  .react { color: #61dafb; }
-  .sql { color: #00758f; }
-  
+}

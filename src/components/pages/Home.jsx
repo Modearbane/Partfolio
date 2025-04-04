@@ -13,7 +13,7 @@ const Home = () => {
   
     const link = document.createElement("a");
     link.href = downloadUrl;
-    link.download = "CV.pdf";
+    link.download = "Mano_CV.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -38,7 +38,7 @@ const Home = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        {language === "lt" ? "Tavo Vardas" : "Your Name"}
+        {language === "lt" ? "Modestas" : "Modestas"}
       </motion.h1>
 
       <Typewriter
