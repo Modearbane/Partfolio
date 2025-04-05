@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useTheme } from "../../context/ThemeContext";
 import { useLanguage } from "../../context/LanguageContext";
 import "../Styles/Projects.css";
@@ -55,13 +55,17 @@ const Projects = () => {
   const { language } = useLanguage();
   const [selectedCategory, setSelectedCategory] = useState("All");
 
+  useEffect(() => {
+    document.body.className = theme; // Pritaiko visam puslapiui
+  }, [theme]);
+
   const filteredProjects =
     selectedCategory === "All"
       ? projectsData
       : projectsData.filter((project) => project.category === selectedCategory);
 
   return (
-    <div className={`projects-container ${theme}`}>
+    <div className="projects-container">
       <h1 className="projects-title">
         {language === "lt" ? "Mano Projektai" : "My Projects"}
       </h1>
@@ -81,9 +85,13 @@ const Projects = () => {
       <div className="projects-list">
         {filteredProjects.map((project) => (
           <div key={project.id} className="project-card">
-            <img src={project.image} alt={project.title} className="project-image" />
+            <img
+              src={project.image}
+              alt={project.title}
+              className="project-image"
+            />
             <div className="project-info">
-              <h3>{project.title}</h3>
+              <h3 className="project-title">{project.title}</h3>
               <a
                 href={project.link}
                 className="project-link"

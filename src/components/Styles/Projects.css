@@ -1,16 +1,29 @@
+/* Global background and text color */
+body.light {
+  background-color: #f9f9f9;
+  color: #222;
+}
+
+body.dark {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+/* Konteineris */
 .projects-container {
   text-align: center;
   padding: 40px 20px;
-  margin-top: 80px; /* Atitraukta nuo viršaus */
+  margin-top: 80px;
 }
 
+/* Antraštė */
 .projects-title {
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 20px;
-  color: #333;
 }
 
+/* Filtravimo mygtukai */
 .filter-buttons {
   margin-bottom: 20px;
 }
@@ -26,14 +39,12 @@
   transition: 0.3s;
 }
 
-.filter-buttons button:hover {
-  background: #0056b3;
-}
-
+.filter-buttons button:hover,
 .filter-buttons .active {
   background: #0056b3;
 }
 
+/* Projektų sąrašas */
 .projects-list {
   display: flex;
   flex-wrap: wrap;
@@ -42,6 +53,7 @@
   margin-top: 20px;
 }
 
+/* Kortelė */
 .project-card {
   width: 300px;
   border: 1px solid #ddd;
@@ -50,22 +62,37 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
   background: white;
+  color: #222;
+}
+
+body.dark .project-card {
+  background: #1e1e1e;
+  border-color: #333;
+  color: #f0f0f0;
 }
 
 .project-card:hover {
   transform: scale(1.05);
 }
 
+/* Paveikslėlis */
 .project-image {
   width: 100%;
   height: 200px;
   object-fit: cover;
 }
 
+/* Informacija */
 .project-info {
   padding: 15px;
 }
 
+.project-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* Nuoroda */
 .project-link {
   display: block;
   margin-top: 10px;
@@ -81,7 +108,16 @@
   background: #0056b3;
 }
 
-/* ✅ RESPONSIVE DESIGN */
+body.dark .project-link {
+  background: #0a84ff;
+  color: #fff;
+}
+
+body.dark .project-link:hover {
+  background: #0066cc;
+}
+
+/* RESPONSIVE */
 @media (max-width: 1024px) {
   .projects-container {
     padding: 30px 15px;
