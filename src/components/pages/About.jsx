@@ -44,7 +44,7 @@ const About = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          {language === "lt" ? "Junior Front-end programuotojas" : "Junior Front-end Developer"}
+          {language === "lt" ? "Pradinis svetainių kūrėjas" : "Beginner Web Developer"}
         </motion.p>
 
         <motion.p
@@ -54,8 +54,8 @@ const About = () => {
           transition={{ duration: 1 }}
         >
           {language === "lt"
-            ? "Esu aistringas front-end programuotojas, mėgstantis kurti modernias, interaktyvias svetaines."
-            : "I am a passionate front-end developer who loves creating modern, interactive websites."}
+            ? "Esu pradinis svetainių kūrėjas, dirbantis su HTML, CSS, JavaScript, React, MySQL, Bootstrap ir Node.js. Mėgstu kurti modernias, interaktyvias svetaines, kurios yra pritaikytos įvairiems įrenginiams."
+            : "I am a beginner web developer working with HTML, CSS, JavaScript, React, MySQL, Bootstrap, and Node.js. I enjoy building modern, interactive websites that are responsive and user-friendly."}
         </motion.p>
 
         <div className="skills-container">
