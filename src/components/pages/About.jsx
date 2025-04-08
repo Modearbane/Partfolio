@@ -44,7 +44,7 @@ const About = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          {language === "lt" ? "Pradinis svetainių kūrėjas" : "Beginner Web Developer"}
+          {language === "lt" ? "Pradedantysis svetainių kūrėjas" : "Beginner Web Developer"}
         </motion.p>
 
         <motion.p
@@ -54,7 +54,7 @@ const About = () => {
           transition={{ duration: 1 }}
         >
           {language === "lt"
-            ? "Esu pradinis svetainių kūrėjas, dirbantis su HTML, CSS, JavaScript, React, MySQL, Bootstrap ir Node.js. Mėgstu kurti modernias, interaktyvias svetaines, kurios yra pritaikytos įvairiems įrenginiams."
+            ? "Esu pradedantysis svetainių kūrėjas, dirbantis su HTML, CSS, JavaScript, React, MySQL, Bootstrap ir Node.js. Mėgstu kurti modernias, interaktyvias svetaines, kurios yra pritaikytos įvairiems įrenginiams."
             : "I am a beginner web developer working with HTML, CSS, JavaScript, React, MySQL, Bootstrap, and Node.js. I enjoy building modern, interactive websites that are responsive and user-friendly."}
         </motion.p>
 
