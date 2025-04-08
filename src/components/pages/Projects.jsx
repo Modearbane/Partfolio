@@ -3,24 +3,26 @@ import { useTheme } from "../../context/ThemeContext";
 import { useLanguage } from "../../context/LanguageContext";
 import "../Styles/Projects.css";
 import PlantImage from "../../assets/Plant.png";
+import ShopImage from "../../assets/shop.png";
+import WolfImage from "../../assets/wolfs.png";
 
-// Ikonos
+
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaDatabase, FaThLarge } from "react-icons/fa";
 
 const projectsData = [
   {
     id: 1,
-    title: "Portfolio Website",
+    title: "Mini-Shop",
     category: "HTML",
-    image: "/images/portfolio.jpg",
-    link: "#",
+    image: ShopImage,
+    link: "https://modearbane.github.io/Mini-Shop/",
   },
   {
     id: 2,
-    title: "E-commerce App",
-    category: "CSS",
-    image: "/images/ecommerce.jpg",
-    link: "#",
+    title: "Wolfs",
+    category: "React",
+    image: WolfImage,
+    link: "https://modearbane.github.io/Wolfs/",
   },
   {
     id: 3,
@@ -29,20 +31,9 @@ const projectsData = [
     image: PlantImage,
     link: "https://modearbane.github.io/ReactPlantShop/",
   },
-  {
-    id: 4,
-    title: "Task Manager",
-    category: "React",
-    image: "/images/task-manager.jpg",
-    link: "#",
-  },
-  {
-    id: 5,
-    title: "Database Dashboard",
-    category: "MySQL",
-    image: "/images/database.jpg",
-    link: "#",
-  },
+  
+  
+  
 ];
 
 const categories = [
